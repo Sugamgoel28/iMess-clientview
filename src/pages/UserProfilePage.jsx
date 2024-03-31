@@ -33,7 +33,7 @@ const UserProfilePage = () => {
                             <p className="text-gray-600">{user.hall}</p>
                         </div>
                     </div>
-                    <Attendance attendanceData={user.attendanceData} />
+                    {/* <Attendance attendanceData={user.attendanceData} /> */}
                 </div>
                 <div className="mt-6">
                     <PersonalDetail mail={user.mail} department={user.department} phone={user.phone} />

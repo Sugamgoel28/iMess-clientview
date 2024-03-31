@@ -1,41 +1,22 @@
+import React from "react";
 import Navbar from "../components/Navbar";
-import React, { useState } from "react";
-import RaiseComplaint from "../components/RaiseComplaint";
-import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
+import Calendar from "../components/Calendar";
+import Login from "./Login";
 
 function Homepage() {
-  const [showForm, setShowForm] = useState(false);
-
-  const handleOpenForm = () => {
-    setShowForm(true);
-  };
-
-  const handleCloseForm = () => {
-    setShowForm(false);
-  };
-
-  const handleSubmitForm = (formData) => {
-    // Handle form submission logic here
-    console.log(formData);
-    setShowForm(false); // Close the form after submission
-  };
   return (
-    <div>
-      <Navbar />
+    <div className="flex h-screen">
+      <div className="w-2/3 border-black">
+        <div className="text-left bg-purple-400 p-6 text-xl">
+          <h1 className="font-semibold">Welcome XYZ SHARMA</h1>
+          <h3 className=" text-gray-300">Dashboard</h3>
+        </div>
+      </div>
+      <div className="w-1/3 border-black">
+        <div className="w-full">
+          <Calendar />
+        </div>
 
-      <div>
-        <button
-          className="p-4 font-sans text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
-          onClick={handleOpenForm}
-        >
-          <ErrorOutlineOutlinedIcon fontSize="large" className="pb-1"/> Raise Complaint
-        </button>
-        {showForm && (
-          <RaiseComplaint
-            onCancel={handleCloseForm}
-            onSubmit={handleSubmitForm}
-          />
-        )}
       </div>
     </div>
   );
