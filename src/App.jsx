@@ -1,20 +1,15 @@
-import { useState } from 'react'
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import Homepage from './pages/Homepage'
-import Calendar from './components/Calendar'
-import MessMenu from './components/MessMenu'
-import Login from './pages/Login'
-import UserProfilePage from './pages/UserProfilePage'
 function App() {
   return (
     <>
-      <Homepage />
-      <Calendar/>
-      <MessMenu/>
-      <Login/>
-      {/* <UserProfilePage/> */}
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
