@@ -97,10 +97,6 @@ const UserProfilePage = () => {
         </div>
         <div className="mt-2 bg-white">
           <Attendance attendanceData={user.attendanceData} />
-          <div className="mt-8">
-            <h2 className="mb-4 text-2xl font-bold">Attendance</h2>
-            <AttendanceTable attendanceData={user.attendanceData} />
-          </div>
         </div>
       </div>
     </div>
