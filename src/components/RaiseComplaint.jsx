@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const RaiseComplaint = ({ onCancel, onSubmit }) => {
-  const [title, setTitle] = useState('');
-  const [type, setType] = useState('');
-  const [dateTime, setDateTime] = useState('');
-  const [complaint, setComplaint] = useState('');
+  const [title, setTitle] = useState("");
+  const [type, setType] = useState("");
+  const [dateTime, setDateTime] = useState("");
+  const [complaint, setComplaint] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
