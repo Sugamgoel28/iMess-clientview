@@ -5,6 +5,11 @@ import PersonalDetail from "../components/PersonalDetail";
 import Attendance from "../components/Attendance";
 import AttendanceTable from "../components/AttendanceTable";
 import RaiseComplaint from "../components/RaiseComplaint";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChartSimple,
+  faCircleExclamation,
+} from "@fortawesome/free-solid-svg-icons";
 
 const UserProfilePage = () => {
   const [complaintPage, setComplaintPage] = useState(false);
@@ -53,8 +58,8 @@ const UserProfilePage = () => {
   };
 
   return (
-    <div className="bg-gray-100">
-      <div className="flex flex-row w-3/4 min-h-screen m-5 bg-white border-2 border-black h-3/4 justify-evenly ">
+    <div className="bg-gray-100 flex justify-center">
+      <div className="flex flex-row w-3/4 min-h-screen m-5 bg-white border-2 border-gray-300 rounded-lg h-3/4 justify-evenly ">
         <div className="flex items-center bg-white">
           <div className="items-center">
             <img
@@ -66,14 +71,20 @@ const UserProfilePage = () => {
               <h1 className="text-2xl font-bold">{user.name}</h1>
               <p className="text-gray-600">{user.RollNumber}</p>
               <p className="text-gray-600">{user.hall}</p>
-              <div className="w-full h-20 my-3 border">Things Speak</div>
+            </div>
+            <div className="">
+              <button className="p-4 font-sans text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600 mb-2">
+                <a href="https://thingspeak.com/channels/2449450">
+                  {<FontAwesomeIcon icon={faChartSimple} />} ThinkSpeak
+                </a>
+              </button>
             </div>
             <div className="">
               <button
                 className="p-4 font-sans text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
                 onClick={() => setComplaintPage(true)}
               >
-                Raise Complaint
+                {<FontAwesomeIcon icon={faCircleExclamation} />} Raise Complaint
               </button>
             </div>
             {complaintPage && (
@@ -86,10 +97,6 @@ const UserProfilePage = () => {
         </div>
         <div className="mt-6 bg-white">
           <Attendance attendanceData={user.attendanceData} />
-          <div className="mt-8">
-            <h2 className="mb-4 text-2xl font-bold">Attendance</h2>
-            <AttendanceTable attendanceData={user.attendanceData} />
-          </div>
         </div>
       </div>
     </div>

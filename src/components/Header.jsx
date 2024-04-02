@@ -1,43 +1,23 @@
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import nitrLogo from "./nitrlogo.png";
 import DateandTime from "./DateandTime";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
-  const navigate = useNavigate();
-
-  const navItems = [
-    {
-      name: "User Profile",
-      slug: "/user-profile",
-    },
-    {
-      name: "Attendance",
-      slug: "/attendance",
-    },
-    {
-      name: "Mess Menu",
-      slug: "/mess-menu",
-    },
-    {
-      name: "Notifications",
-      slug: "/notifications",
-    },
-  ];
-
-  const handleSubmit = () => {};
-
   return (
-    <nav className="flex justify-around w-full h-12 align-middle">
+    <nav className="flex justify-around w-full h-12 my-auto bg-white">
       <div className="flex flex-row w-2/5 flex-nowrap">
         <Link to="/">
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />
         </Link>
+        <div className="p-1 my-auto">
+          <h1 className="font-semibold">
+            National Institute of Technology, Rourkela
+          </h1>
+        </div>
       </div>
 
-<div className="hidden w-2/5 mt-3 text-right md:block">
+      <div className="hidden w-2/5 mt-3 text-right md:block">
         <DateandTime />
       </div>
 
