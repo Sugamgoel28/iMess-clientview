@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { VictoryPie } from "victory";
 
 const Attendance = ({ attendanceData }) => {
   const [selectedMonth, setSelectedMonth] = useState(attendanceData[0]?.month);
@@ -19,31 +20,54 @@ const Attendance = ({ attendanceData }) => {
     (data) => data.month === selectedMonth
   );
 
+  const pieData = [
+    { x: "Present", y: selectedMonthData.daysTakenFood },
+    { x: "Absent", y: selectedMonthData.daysNotTakenFood },
+  ];
+
   return (
-    <div className="mt-4 attendance">
-      <div className="flex items-center mb-4">
-        <h2 className="mb-2 text-lg font-bold">Attendance</h2>
-        <Select
-          className="w-48 ml-auto"
-          options={renderMonthOptions()}
-          value={{ value: selectedMonth, label: selectedMonth }}
-          onChange={handleMonthChange}
-        />
+    <div>
+      <h2 className="mb-2 text-2xl font-semibold text-center">
+        Attendance History
+      </h2>
+      <div class="flex justify-evenly">
+        <div className="">
+          <Select
+            className="w-48"
+            options={renderMonthOptions()}
+            value={{ value: selectedMonth, label: selectedMonth }}
+            onChange={handleMonthChange}
+          />
+          {selectedMonthData && (
+            <div className="p-3 text-lg text-gray-600">
+              <p>
+                <strong>Days Food taken:</strong>{" "}
+                {selectedMonthData.daysTakenFood}
+              </p>
+              <p>
+                <strong>Days Food Not Taken:</strong>{" "}
+                {selectedMonthData.daysNotTakenFood}
+              </p>
+              <p>
+                <strong>Total Days:</strong> {selectedMonthData.totalDays}
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="">
+          {selectedMonthData && (
+            <>
+              <div className="h-52 w-52">
+                <VictoryPie
+                  data={pieData}
+                  colorScale={["green", "red"]}
+                  innerRadius={80}
+                />
+              </div>
+            </>
+          )}
+        </div>
       </div>
-      {selectedMonthData && (
-        <>
-          <p className="text-gray-600">
-            <strong>Days Taken Food:</strong> {selectedMonthData.daysTakenFood}
-          </p>
-          <p className="text-gray-600">
-            <strong>Days Not Taken Food:</strong>{" "}
-            {selectedMonthData.daysNotTakenFood}
-          </p>
-          <p className="text-gray-600">
-            <strong>Total Days:</strong> {selectedMonthData.totalDays}
-          </p>
-        </>
-      )}
     </div>
   );
 };
