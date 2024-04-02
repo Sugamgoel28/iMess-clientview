@@ -62,7 +62,7 @@ const UserProfilePage = () => {
               alt={`${user.name}'s profile photo`}
               className="w-56 m-2 border border-gray-600 rounded-full"
             />
-            <div className="m-4">
+            <div className="m-2">
               <h1 className="text-2xl font-bold">{user.name}</h1>
               <p className="text-gray-600">{user.RollNumber}</p>
               <p className="text-gray-600">{user.hall}</p>
@@ -84,10 +84,10 @@ const UserProfilePage = () => {
             )}
           </div>
         </div>
-        <div className="mt-6 bg-white">
+        <div className="mt-2 bg-white">
           <Attendance attendanceData={user.attendanceData} />
-          <div className="mt-8">
-            <h2 className="mb-4 text-2xl font-bold">Attendance</h2>
+          <div className="">
+            <h2 className="mb-1 text-2xl font-bold ">Attendance</h2>
             <AttendanceTable attendanceData={user.attendanceData} />
           </div>
         </div>
