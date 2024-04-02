@@ -1,4 +1,4 @@
-// import Dashboard from "./Dashboard";
+
 import { useEffect, useState } from "react";
 
 function Notifications() {
@@ -7,27 +7,21 @@ function Notifications() {
   const [gas, setGas] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://api.thingspeak.com/channels/2449450/fields/1.json?api_key=5GC5GGJMH3UJYN01&results=1"
-    )
+    fetch("https://api.thingspeak.com/channels/2449450/fields/1.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setTemp((temp) => temp.push(data.feeds[0].field1));
       });
 
-    fetch(
-      "https://api.thingspeak.com/channels/2449450/fields/2.json?api_key=5GC5GGJMH3UJYN01&results=1"
-    )
+    fetch("https://api.thingspeak.com/channels/2449450/fields/2.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setHumidity((humidity) => humidity.push(data.feeds[0].field2));
       });
 
-    fetch(
-      "https://api.thingspeak.com/channels/2449450/fields/3.json?api_key=5GC5GGJMH3UJYN01&results=1"
-    )
+    fetch("https://api.thingspeak.com/channels/2449450/fields/3.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
