@@ -7,12 +7,11 @@ import { Feedback } from "@mui/icons-material";
 
 function App() {
   return (
-    <>
+    <div className="w-full">
       <Header />
       <Outlet />
       <Footer />
-      {/* <Feedback /> */}
-    </>
+    </div>
   );
 }
 

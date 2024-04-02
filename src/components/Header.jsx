@@ -36,34 +36,8 @@ function Header() {
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />
         </Link>
 
-        <h1 className="m-3 font-semibold" >National Institute of technology, Rourkela</h1>
-      </div>
-{/* 
-      <div className="mt-2 font-semibold cursor-pointer" onClick={handleSubmit}>
-        <h1>
-          Services{" "}
-          <span>
-            <FontAwesomeIcon icon={faAngleDown} />
-          </span>
-        </h1>
-      </div> */}
 
-      {/* <div className="w-1/5 ml-auto">
-        <ul className="flex justify-around gap-3 ml-auto">
-          {navItems.map((item) => (
-            <li key={item.name}>
-              <button
-                className="inline-block px-6 py-2 font-semibold duration-200 rounded-full hover:bg-amber-300 hover:text-white "
-                onClick={() => navigate(item.slug)}
-              >
-                {item.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-
-      <div className="hidden w-2/5 mt-3 text-right md:block">
+<div className="hidden w-2/5 mt-3 text-right md:block">
         <DateandTime />
       </div>
 
