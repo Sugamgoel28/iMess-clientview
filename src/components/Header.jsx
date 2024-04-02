@@ -37,14 +37,14 @@ function Header() {
         </Link>
       </div>
 
-      <div className="mt-2 cursor-pointer font-semibold" onClick={handleSubmit}>
+      {/* <div className="mt-2 cursor-pointer font-semibold" onClick={handleSubmit}>
         <h1>
           Services{" "}
           <span>
             <FontAwesomeIcon icon={faAngleDown} />
           </span>
         </h1>
-      </div>
+      </div> */}
 
       {/* <div className="ml-auto w-1/5">
         <ul className="flex ml-auto justify-around gap-3">
@@ -61,7 +61,7 @@ function Header() {
         </ul>
       </div> */}
 
-      <div className="w-2/5 text-right mt-3">
+      <div className="w-2/5 text-right mt-3 md:block hidden">
         <DateandTime />
       </div>
 

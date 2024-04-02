@@ -5,12 +5,27 @@ import Login from "./Login";
 import MessMenu from "../components/MessMenu";
 import NextMeal from "../components/NextMeal";
 import RaiseComplaint from "../components/RaiseComplaint";
+import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
 function Homepage() {
-  const [complaintPage, setComplaintPage] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+  const handleOpenForm = () => {
+    setShowForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
+
+  const handleSubmitForm = (formData) => {
+    // Handle form submission logic here
+    console.log(formData);
+    setShowForm(false); // Close the form after submission
+  };
   return (
-    <div className="flex">
-      <div className="w-2/3 border-black">
+    <div className="md:flex md:flex-wrap mb-10">
+      <div className="md:w-2/3 border-black w-full">
         <div className="text-left bg-purple-400 p-6 text-xl">
           <h1 className="font-semibold">Welcome XYZ SHARMA</h1>
           <h3 className=" text-gray-300">Dashboard</h3>
@@ -19,25 +34,29 @@ function Homepage() {
           <MessMenu />
         </div>
       </div>
-      <div className="w-1/3 border-black">
+      <div className="md:w-1/3 border-black w-full">
         <div className="w-full px-1">
           <Calendar />
         </div>
-        <div>
+        <div className="mt-2 ml-1">
           <NextMeal />
         </div>
 
-        <div className="">
-          <button onClick={() => setComplaintPage(true)}>
-            Raise Complaint
+        {/* <div>
+          <button
+            className="p-2 font-sans text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600 mb-2"
+            onClick={handleOpenForm}
+          >
+            <ErrorOutlineOutlinedIcon fontSize="large" className="pb-1" /> Raise
+            Complaint
           </button>
-        </div>
-        {complaintPage && (
-          <RaiseComplaint
-            onCancel={() => setComplaintPage(false)}
-            onSubmit={(data) => console.log(data)}
-          />
-        )}
+          {showForm && (
+            <RaiseComplaint
+              onCancel={handleCloseForm}
+              onSubmit={handleSubmitForm}
+            />
+          )}
+        </div> */}
       </div>
     </div>
   );
