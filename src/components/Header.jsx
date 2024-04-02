@@ -63,7 +63,7 @@ function Header() {
         </ul>
       </div> */}
 
-      <div className="w-2/5 mt-3 text-right">
+      <div className="hidden w-2/5 mt-3 text-right md:block">
         <DateandTime />
       </div>
 
