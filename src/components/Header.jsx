@@ -5,7 +5,7 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 
 function Header() {
   return (
-    <nav className="flex justify-around w-full h-12 align-middle">
+    <nav className="flex justify-around w-full h-12 my-auto bg-white">
       <div className="flex flex-row w-2/5 flex-nowrap">
         <Link to="/">
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />

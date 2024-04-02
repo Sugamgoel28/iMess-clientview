@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import { VictoryPie } from "victory";
+import AttendanceTable from "./AttendanceTable";
 
 const Attendance = ({ attendanceData }) => {
   const [selectedMonth, setSelectedMonth] = useState(attendanceData[0]?.month);
@@ -67,6 +68,17 @@ const Attendance = ({ attendanceData }) => {
             </>
           )}
         </div>
+      </div>
+
+      <div className="">
+        {selectedMonthData && (
+          <>
+            <div className="mt-8">
+              <h2 className="mb-4 text-2xl font-bold">Attendance</h2>
+              <AttendanceTable selectedMonth={selectedMonth} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
