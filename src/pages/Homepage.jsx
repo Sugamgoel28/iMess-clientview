@@ -28,7 +28,7 @@ function Homepage() {
       <div className="md:w-2/3 border-black w-full">
         <div className="text-left bg-purple-400 p-6 text-xl">
           <h1 className="font-semibold">Welcome XYZ SHARMA</h1>
-          <h3 className=" text-gray-300">Dashboard</h3>
+          <h3 className="text-gray-300 ">Dashboard</h3>
         </div>
         <div className="w-full p-1 pr-0">
           <MessMenu />
@@ -42,21 +42,6 @@ function Homepage() {
           <NextMeal />
         </div>
 
-        {/* <div>
-          <button
-            className="p-2 font-sans text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600 mb-2"
-            onClick={handleOpenForm}
-          >
-            <ErrorOutlineOutlinedIcon fontSize="large" className="pb-1" /> Raise
-            Complaint
-          </button>
-          {showForm && (
-            <RaiseComplaint
-              onCancel={handleCloseForm}
-              onSubmit={handleSubmitForm}
-            />
-          )}
-        </div> */}
       </div>
     </div>
   );

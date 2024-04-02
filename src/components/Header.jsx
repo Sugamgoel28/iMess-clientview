@@ -37,7 +37,7 @@ function Header() {
         </Link>
 
 
-<div className="w-2/5 text-right mt-3 md:block hidden">
+<div className="hidden w-2/5 mt-3 text-right md:block">
         <DateandTime />
       </div>
 
