@@ -200,7 +200,7 @@ const AdminPortal = () => {
       <h1 className="mb-4 text-3xl font-bold">Admin Portal</h1>
       <SearchBar onSearch={handleSearch} />
       {filteredAttendance.length > 0 ? (
-        <AttendanceTable attendanceData={filteredAttendance[0].attendance} />
+        <AttendanceTable data={filteredAttendance[0].attendance} />
       ) : (
         <p className="text-gray-600">
           No attendance found for the entered roll number.
