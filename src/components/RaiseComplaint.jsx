@@ -6,6 +6,12 @@ const RaiseComplaint = ({ onCancel, onSubmit }) => {
   const [dateTime, setDateTime] = useState("");
   const [complaint, setComplaint] = useState("");
 
+  const handleAttachmentChange = (e) => {
+    // Assuming only one file is attached
+    const file = e.target.files[0];
+    setAttachment(file);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can perform any validation here before submitting the form
@@ -80,12 +86,11 @@ const RaiseComplaint = ({ onCancel, onSubmit }) => {
               onChange={(e) => setType(e.target.value)}
               required
             >
-              <option value="">Select Type</option>
-              <option value="Hygiene">Hygiene</option>
-              <option value="Taste">Taste</option>
-              <option value="Delay">Delay</option>
-              <option value="Quality">Quality</option>
-              <option value="Quantity">Quantity</option>
+              <option value="">Select Complaint Type</option>
+              <option value="Food Quality">Food Quality</option>
+              <option value="Food Hygiene">Food Hygiene</option>
+              <option value="Management Issue">Management Issue</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div className="mb-4">
@@ -101,7 +106,7 @@ const RaiseComplaint = ({ onCancel, onSubmit }) => {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-1">
             <label htmlFor="complaint" className="block mb-1 font-semibold">
               Complaint Description
             </label>
@@ -112,6 +117,18 @@ const RaiseComplaint = ({ onCancel, onSubmit }) => {
               onChange={(e) => setComplaint(e.target.value)}
               required
             ></textarea>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="attachment" className="block font-semibold">
+              Attachment:
+            </label>
+            <input
+              type="file"
+              id="attachment"
+              onChange={handleAttachmentChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            />
           </div>
           <button
             type="submit"
