@@ -12,6 +12,9 @@ import Homepage from "./pages/Homepage.jsx";
 import MessMenu from "./components/MessMenu.jsx";
 import Notifications from "./pages/Notifications.jsx";
 import UserProfilePage from "./pages/UserProfilePage.jsx";
+import AdminComplaintPortal from "./pages/AdminComplaintPortal.jsx";
+import AdminPortal from "./pages/AdminPortal.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +23,9 @@ const router = createBrowserRouter(
       <Route path="/mess-menu" element={<MessMenu />} />
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/user-profile" element={<UserProfilePage />} />
+      <Route path="/admin/complaint-portal" element={<AdminComplaintPortal/>} />
+      <Route path="/admin/dashboard" element={<AdminDashboard/>} />
+      <Route path="/admin/attendance" element={<AdminPortal/>} />
     </Route>
   )
 );

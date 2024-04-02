@@ -26,7 +26,7 @@ const AttendanceTable = () => {
                         <th className="px-4 py-2">Verification</th>
                     </tr>
                 </thead>
-                <tbody className="text-gray-600">
+                <tbody className="text-center text-gray-600">
                     {dummyData.map((row, index) => (
                         <tr key={row.id} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                             <td className="px-4 py-2">{index + 1}</td>
