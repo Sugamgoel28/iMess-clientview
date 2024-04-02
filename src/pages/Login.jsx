@@ -8,11 +8,14 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
 
+  const [role, setRole] = React.useState("Student");
+
   const handleLogin = (e) => {
     e.preventDefault();
     // Handle login logic here (e.g., validate credentials, make API calls, etc.)
     // You can use state or context to manage user authentication
-    navigate("/homepage");
+    if (role === "Admin") navigate("/admin/dashboard");
+    else navigate("/homepage");
   };
 
   const handleForgotPassword = () => {
@@ -20,8 +23,16 @@ function Login() {
     console.log("User clicked forgot password!");
   };
 
+  const handleRole = () => {
+    if (role === "Student") setRole("Admin");
+    else setRole("Student");
+  };
+
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-screen bg-gray-100 flex-col">
+      <div>
+        <p>{role} Login</p>
+      </div>
       <div className="p-8 text-left bg-white rounded shadow-md w-96">
         <div className="flex items-center mb-4">
           {/* Display the resized logo on the left */}
@@ -68,6 +79,12 @@ function Login() {
           Forgot Password?
         </p>
       </div>
+      <button
+        className="p-4 font-sans text-lg font-bold text-gray-600 bg-gray-200 rounded hover:bg-gray-400 mt-1"
+        onClick={handleRole}
+      >
+        {role} Login
+      </button>
     </div>
   );
 }
