@@ -26,7 +26,7 @@ const Attendance = ({ attendanceData }) => {
   ];
 
   return (
-    <div className="border border-green-500">
+    <div>
       <h2 className="mb-2 text-2xl font-semibold text-center">
         Attendance History
       </h2>

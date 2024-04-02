@@ -35,7 +35,7 @@ function Header() {
         <Link to="/">
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />
         </Link>
-
+      </div>
 
 <div className="hidden w-2/5 mt-3 text-right md:block">
         <DateandTime />
@@ -64,4 +64,5 @@ function Header() {
     </nav>
   );
 }
+
 export default Header;
