@@ -30,36 +30,17 @@ function Header() {
   const handleSubmit = () => {};
 
   return (
-    <nav className="flex justify-around w-full h-12 align-middle">
-      <div className="w-1/5">
+    <nav className="flex justify-around w-full h-12 my-auto">
+      <div className="w-2/5 flex">
         <Link to="/">
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />
         </Link>
+        <div className="p-1 my-auto">
+          <h1 className="font-semibold">
+            National Institute of Technology, Rourkela
+          </h1>
+        </div>
       </div>
-
-      {/* <div className="mt-2 cursor-pointer font-semibold" onClick={handleSubmit}>
-        <h1>
-          Services{" "}
-          <span>
-            <FontAwesomeIcon icon={faAngleDown} />
-          </span>
-        </h1>
-      </div> */}
-
-      {/* <div className="ml-auto w-1/5">
-        <ul className="flex ml-auto justify-around gap-3">
-          {navItems.map((item) => (
-            <li key={item.name}>
-              <button
-                className="inline-block px-6 py-2 duration-200 hover:bg-amber-300 hover:text-white rounded-full font-semibold "
-                onClick={() => navigate(item.slug)}
-              >
-                {item.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div> */}
 
       <div className="w-2/5 text-right mt-3 md:block hidden">
         <DateandTime />
