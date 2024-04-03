@@ -387,8 +387,6 @@ const Attendance = ({ attendanceData }) => {
     },
   ];
 
-  const data = dummyData.find((item) => item.key === selectedMonth).value;
-
   const [selectedMonth, setSelectedMonth] = useState("March 2024");
 
   const handleMonthChange = (selectedOption) => {
@@ -401,6 +399,8 @@ const Attendance = ({ attendanceData }) => {
       label: data.month,
     }));
   };
+
+  const data = dummyData.find((item) => item.key === selectedMonth).value;
 
   const selectedMonthData = attendanceData.find(
     (data) => data.month === selectedMonth

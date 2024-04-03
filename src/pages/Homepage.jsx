@@ -27,7 +27,7 @@ function Homepage() {
     <div className="md:flex md:flex-wrap mb-10">
       <div className="md:w-2/3 border-black w-full">
         <div className="text-left bg-purple-400 p-6 text-xl">
-          <h1 className="font-semibold">Welcome XYZ SHARMA</h1>
+          <h1 className="font-semibold">Welcome ASHUTOSH PADARABINDA</h1>
           <h3 className="text-gray-300 ">Dashboard</h3>
         </div>
         <div className="w-full p-1 pr-0">
@@ -41,7 +41,6 @@ function Homepage() {
         <div className="mt-2 ml-1">
           <NextMeal />
         </div>
-
       </div>
     </div>
   );
