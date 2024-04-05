@@ -31,7 +31,9 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100 flex-col">
       <div>
-        <p>{role} Login</p>
+        <p className="font-semibold bg-purple-500 p-3 border-black rounded-md text-white">
+          {role} Login
+        </p>
       </div>
       <div className="p-8 text-left bg-white rounded shadow-md w-96">
         <div className="flex items-center mb-4">

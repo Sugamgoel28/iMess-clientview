@@ -7,7 +7,7 @@ function Header() {
   return (
     <nav className="flex justify-around w-full h-12 my-auto bg-white">
       <div className="flex flex-row w-2/5 flex-nowrap">
-        <Link to="/">
+        <Link to="/homepage">
           <img src={nitrLogo} alt="NITR Logo" className="w-10" />
         </Link>
         <div className="p-1 my-auto">
