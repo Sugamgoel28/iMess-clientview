@@ -24,7 +24,7 @@ function AdminDashboard() {
   return (
     <div className="mb-10 md:flex md:flex-wrap">
       <div className="w-full p-6 text-xl text-left bg-purple-400">
-        <h1 className="font-semibold">Welcome XYZ SHARMA</h1>
+        <h1 className="font-semibold">Welcome ADMIN</h1>
         <h3 className="text-gray-300 ">Dashboard</h3>
       </div>
       <div className="w-full border-black md:w-2/3">
